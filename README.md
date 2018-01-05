@@ -2,13 +2,13 @@
 
 This is an Alarm Clock (Radio) based on the ESP8266 in combination with a MAX7219 LED-Matrix, Relay-Board and DS3231 RTC.
 
-Note: This Project is in heavy development at the moment.
+Note: This Project is under heavy development at the moment.
 
 ## Wiring
 
 Image how to wire the project will follow.
 
-LED-Matrix:
+###### LED-Matrix:
 
 | LED-Matrix | ESP8266 |
 | -------- | -------- |
@@ -18,7 +18,8 @@ LED-Matrix:
 | CS    | GPIO 10  |
 | CLK     | GPIO14 (HSPICLK)  |
 
-RTC DS3231:
+
+###### RTC DS3231:
 
 | DS3231 | ESP8266 |
 | -------- | -------- |
@@ -27,25 +28,31 @@ RTC DS3231:
 | SCL | GPIO5 |
 | SDA | GPIO4 |
 
-Relay-Module:
+
+###### Relay-Module:
 
 | Relay-Module | ESP8266 | Type |
-| -------- | -------- |  |
-| VCC     | Vin/5V+   |  |
-| GND     | GND    |  |
+| -------- | -------- | -------- |
+| VCC     | Vin/5V+   | Power |
+| GND     | GND    | GND |
 | In1     | GPIO16    | Power |
 | In2     | GPIO12    | Input |
 | In3     | GPIO12    | Input |
 | In4     | GPIO12    | Input |
 
-Switch:
+
+###### Switch:
 
 The switch should connect the GPIO to ground if it is pressed down:
 
 power_sw: GPIO3
+
 input_sw: GPIO1
+
 alarm_sw: GPIO2
+
 sleep_sw: GPIO0
+
 
 You can also change this at the beginning of the code:
 ```
@@ -84,11 +91,13 @@ The Clock is controlled with 4-Button Control
 ## Issues
 
 * Alarm 2 is not working like expected. It will be triggered every hour.
-* Network connection is not used to update time over NTP.
+* Networkconnection is not used to update time over NTP.
 * Long-Press blocks display until release.
 
 ## Dependencies
 
 LedMatrix.h : [https://github.com/squix78/MAX7219LedMatrix](https://github.com/squix78/MAX7219LedMatrix)
+
 DS3231.h : [https://github.com/NorthernWidget/DS3231](https://github.com/NorthernWidget/DS3231)
+
 WiFiManager.h : [https://github.com/tzapu/WiFiManager](https://github.com/tzapu/WiFiManager)
