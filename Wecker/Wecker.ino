@@ -62,6 +62,8 @@ void setup() {
   delay(400);
   display_text("Uhr");
 
+  WiFi.hostname(NodeName);
+  //WiFi.mode(WIFI_OFF);
   //WiFiManager intialisation. Once completed there is no need to repeat the process on the current board
   WiFiManager wifiManager;
   wifiManager.autoConnect();
@@ -118,7 +120,8 @@ void setup() {
   //-------------------------------------------------
   //OTA
   // No authentication by default
-  ArduinoOTA.setPassword((const char *)"ota-password");
+  ArduinoOTA.setPassword(NodeName.c_str());
+  ArduinoOTA.setHostname(NodeName.c_str());
 
   ArduinoOTA.onStart([]() {
     Serial.println("Start");

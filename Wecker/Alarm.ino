@@ -125,7 +125,7 @@ void set_alarm1(){
 
 
 void set_alarm2(){
-  Clock.setA2Time(0, al2h, al2m, 100, true, false, false);
+  Clock.setA2Time(0, al2h, al2m, 0b1000000, true, false, false);
   //Clock.turnOnAlarm(1);
   byte A1Day, A1Hour, A1Minute, AlarmBits;
   bool A1Dy, A1h12, A1PM;

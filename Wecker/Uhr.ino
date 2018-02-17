@@ -239,8 +239,8 @@ void add_minute(int i){
 
 void add_month(int i){
   M = M + i; 
-  if (m > 12){
-    m = 1;
+  if (M > 12){
+    M = 1;
   }  
 }
 
